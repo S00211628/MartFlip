@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+}
+
+.row{
+    background-color: #fbfbf2;
+}
+
+.deck-card{
+    display: grid;
+    background-color: lightgrey;
+    border-radius: 20px;
+    padding: 10px;
+    width: 50%;
+    
+}
+
+@media screen and (max-width:700px) {
+    .deck-card{
+        width: 90%;
+    }
+}
+
+.button-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.button-card button{
+    padding: 5px;
+}
+
+.DeckHeader .DeckAnswerHeader{
+    margin-left: 5rem;
+}
+
+
+.DeckAnswerHeader{
+    display: none;
+}
+
+.DeckP{
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.answer{
+    margin-bottom: 3rem;
+    display: none;
+}
+
+.showAnswerbtn ,.btbButton{
+    margin: auto;
+    padding: auto;
+    width: auto;
+}
+
+.result-btn{
+    margin-right: 2px;
+}
+
+.results-row{
+    display: none;
+}
+
+.MakeVisible{
+    display: block;
+}
+
+
+.col-sm-10{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
+
+.finsihed{
+    margin: 0 auto;
+}
+
+.transition{
+    transition: transform 1s ease-in forwards;
+}
+
+.cardCount{
+    text-align: right;
+}
+
+

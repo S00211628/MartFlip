@@ -1,0 +1,35 @@
+*{
+    margin: 0 auto;
+}
+
+.row{
+    background: #fbfbf2;
+}
+
+.home-card{
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../assets/images/papperStockPhoto.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    width: 100%;
+    border-radius: 10px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 3rem;
+    padding: 0 auto;
+}
+
+.col-sm-10{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width:700px) {
+    .home-card {
+        margin-top: 2rem;
+    }
+}

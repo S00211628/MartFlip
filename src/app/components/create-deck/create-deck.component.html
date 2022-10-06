@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <form class="row g-3">
+        <div class="col-md-3">
+            <label for="deckName" class="form-label">Deck Name</label>
+            <input type="text" class="form-control" id="deckName" required (blur)="DeckNameInput($event)">
+        </div>
+        <div class="col-md-10" *ngFor="let questions of noPotDecks">
+            <label for="question" class="form-label">Question</label>
+            <input type="text" class="form-control" id="question" required (blur)="QuestionInput($event)">
+
+            <label for="answer" class="form-label" >Answer</label>
+            <input type="text" class="form-control" id="answer" required (blur)="AnswerInput($event)">
+        </div>
+        <div class="col-md10">
+            <label for="thumbnail" class="form-label">Thumbnail Link</label>
+            <input type="text" class="form-control" id="thumbnail" required (blur)="ThumbNailInput($event)">
+        </div>
+        <div class="col-md-5 mx-3">
+            <!-- <label for="genre" class="form-label">Genre</label>
+            <input id="Genre" class="form-control" required (blur)="GenreInput($event)"> -->
+            <mat-select placeholder="Select Genre">
+
+                <ng-container *ngFor="let genres of Genres[0].Genres; let i = index">
+
+                    <mat-option [value]="Genres[0].Genres[i]" required (blur)="GenreInput()"> {{Genres[0].Genres[i]}}</mat-option>
+                </ng-container>
+            </mat-select>
+        </div>
+        <div class="col-md-10">
+            <label for="description" class="form-label">Description</label>
+            <textarea id="description" rows="3" class="form-control" required (blur)="DescriptionInput($event)"></textarea>
+        </div>
+        <div class="col-md-6">
+            <button class="btn btn-primary" type="button" (click)="addDeck()">submit</button>
+        </div>
+        <div class="col-md-6">
+            <button class="btn btn-secondary" type="button" (click)="addQuestion()">Add Question</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,35 @@
+
+.container-fluid{
+    background-color: #fbfbf2;
+}
+
+.card{
+        background-color: #a6a2a2;
+        border-radius: 5px;
+        box-shadow: 10px 10px #847577;
+        overflow: hidden;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+.card-img-top{
+    aspect-ratio: 1.76/ 1;
+}
+
+
+.deckEditButton{
+    font-size: 20px;
+}
+
+.editBtn{
+    background-color: #DBD9DB;
+}
+
+
+/* .col-4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */

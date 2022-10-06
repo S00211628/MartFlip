@@ -1,0 +1,26 @@
+<div  class="container-fluid">
+    <h1>Newest</h1>
+    <hr class="bg-dark border-2 border-top border-dark">
+    <div class="row g-3">
+        <div *ngFor="let Name of decksref; let i = index" class=" col-12 col-md-6 col-lg-3  mx-auto">
+            <div class="card">
+                <img src="{{decksref[i].Thumbnail}}" alt="maths stock photo" class="card-img-top"  (click)="setChosenDeck(i)">
+                <div class="row g-3">
+                    <div class="col-10">
+                        <div class="card-body"  (click)="setChosenDeck(i)">
+                            <h2 class="card-title col-10 my-1">{{decksref[i].Name}}</h2>
+                            <p class="card-text">{{decksref[i].Description}}</p>
+                        </div> 
+                    </div>
+                    <div class="col-2 my-auto px-1" >
+                        <button mat-raised-button class="editBtn">
+                            <mat-icon aria-label="edit icon" class="deckEditButton" (click)="GoToEditDeck(i)">edit</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="bg-dark border-2 border-top border-dark">
+    <br>
+</div>

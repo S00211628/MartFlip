@@ -1,0 +1,88 @@
+<div class="container-fluid col-md-4">
+    <h2>Registration Form</h2>
+    <hr />
+    {{registrationForm.value | json}}
+    <hr />
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>DeckName</label>
+            <input formControlName="deckName" type="text" class="form-control"
+                [class.is-invalid]="deckName!.invalid && deckName!.touched">
+
+            <div *ngIf="deckName?.invalid && deckName?.touched">
+                <small class="text-danger" *ngIf="deckName!.errors!['required']">
+                    Deck name is required
+                </small>
+                <small class="text-danger" *ngIf="deckName!.errors!['minlength']">
+                    Deck name must be at least 3 characters long
+                </small>
+                <small class="text-danger" *ngIf="deckName!.errors!['forbiddenName']">
+                    You cannot use {{deckName!.errors!['forbiddenName'].value}} as a deck name
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+            <label>
+                Question
+            </label>
+            <button type="button" class="btn btn-secondary btn-sm m-2" (click)="addOtherQuestions()" (click)="addOtherAnswer()">Add Question</button>
+            <input type="text" class="form-control" formControlName="questions"
+                [class.is-invalid]="questions!.invalid && questions!.touched">
+            <small class="text-danger" [class.d-none]="questions!.valid || questions!.untouched">
+                Question is required
+            </small>
+            <div formArrayName="otherQuestions" *ngFor="let otherQuestions of otherQuestions.controls; let i = index">
+                <input type="text" class="form-control my-1" [formControlName]="i">
+            </div>
+        </div>  
+
+        <!-- <button class="btn btn-primary">your mom</button> -->
+            
+
+        <div class="form-group">
+            <label>
+                Answers
+            </label>
+            <input type="text" class="form-control" formControlName="answers"
+                [class.is-invalid]="answers!.invalid && answers!.touched">
+            <small class="text-danger" [class.d-none]="answers!.valid || answers!.untouched">
+                Question is required
+            </small>
+            <div formArrayName="otherAnswers" *ngFor="let answers of otherAnswers.controls; let i = index">
+                <input type="text" class="form-control my-1" [formControlName]="i">
+            </div>
+        </div>
+        
+
+        <div class="form-group">
+            <label>thumbnail Link</label>
+            <input formControlName="thumbnailLink" type="text" class="form-control"
+                [class.is-invalid]="thumbnailLink!.invalid && thumbnailLink!.touched">
+        
+            <div *ngIf="thumbnailLink?.invalid && thumbnailLink?.touched">
+                <small class="text-danger" *ngIf="thumbnailLink!.errors!['required']">
+                    thumbnail Link is required
+                </small>
+                <small class="text-danger" *ngIf="thumbnailLink!.errors!['minlength']">
+                    thumbnail Link must be at least 3 characters long
+                </small>
+                <small class="text-danger" *ngIf="thumbnailLink!.errors!['forbiddenName']">
+                    You cannot use {{thumbnailLink!.errors!['forbiddenName'].value}} as a thumbnail Link
+                </small>
+        
+            </div>
+            </div>
+
+
+        <button class="btn btn-primary mt-3" type="submit" [disabled]="!registrationForm.valid">
+            add Deck
+        </button>
+        <button class="btn btn-secondary mt-3 ml-2" type="button" (click)="loadApi()">Load API Data
+        </button>
+    </form>
+
+</div>
