@@ -8,4 +8,3 @@ export interface Deck {
   Id: string;
   Genre: string;
 }
-/
